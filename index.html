@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Iniciar sesion de usuario</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+	<link href="css/estilos.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+ </head>
+<body ng-app="login">
+	<div ng-controller="validarForm" class="login">
+		<div class="login-header">
+				<i class="fas fa-sign-in-alt"></i><span>Acceso usuarios</span>
+		</div>
+		<form name="loginForm" action="">
+			<label for="usuario">USUARIO</label>
+			<i class="fas fa-user icono"></i>
+			<input type="text" name="usuario" ng-model="datosForm.usuario" ng-class="{ error: loginForm.usuario.$error.required && !loginForm.usuario.$pristine }" required />	
+			<span class="error_msg" ng-show="loginForm.usuario.$error.required && !loginForm.usuario.$pristine">El campo usuario no puede quedar vacio.</span>
+			<label for="password">PASSWORD</label>
+			<i class="fas fa-unlock-alt icono"></i>
+			<input type="password" name="password" ng-model="datosForm.password" ng-class="{ error: loginForm.password.$error.required && !loginForm.password.$pristine }" required />
+			<span class="error_msg" ng-show="loginForm.password.$error.required && !loginForm.password.$pristine">El campo password no puede quedar vacio.</span>
+			<hr>
+			<input  type="button" class="btn btn-success" value="Iniciar sesión" ng-disabled="!loginForm.$valid" ng-click="enviar()"> 
+			<br>
+			<p>{{ error.error }}</p>
+		</form>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script	src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="js/codigo.js"></script>
+</body>
+</html>

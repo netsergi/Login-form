@@ -1,0 +1,101 @@
+
+body { background: url('../img/fondoWeb.png'); }
+
+span, i { display: inline-block; }
+
+.login {
+	width: 400px;
+	height: 380px;
+	border-radius: 20px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.4);
+	padding: 0;
+	background-color: white;
+	text-align: center;
+	position: absolute;
+	display: none;
+}
+
+
+div.login > div:first-child > span {
+	text-shadow: 0px 1px 1px gray;
+	margin: 5px auto;
+}
+
+div.login > div:first-child >  i {
+	font-size: 1.6em;
+	vertical-align: middle;
+	margin-right: 10px;
+	border: 4px solid white;
+	border-radius: 20px;
+	padding: 3px;
+}
+
+.login-header {
+	height: 70px;
+	padding: 5px;
+	background: linear-gradient(rgba(0, 204, 255,0.4),rgba(0, 204, 255,0.8));
+	font-family: 'Exo', sans-serif;
+	color: white;
+	border-bottom: 5px solid white;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	font-weight: bold;
+	text-align: center;
+	font-size: 1.6em;
+}
+
+.login form {
+	display: inline-block;
+	padding: 5px;
+	width: 400px;
+}
+
+.login form input[type="text"], .login form input[type="password"] {
+	width: 300px;
+	border-radius: 20px;
+	padding-left: 15px;
+	outline: none;
+	height: 40px;
+	border: 1px solid lightblue;
+	font-size: 1.2em;
+	margin-left: 0;
+	background-color: lightyellow;
+}
+
+.login form input:focus {
+	box-shadow: 0px 0px 10px lightblue;
+}
+
+.login form input[type="button"]
+{
+	width: 90%;
+	height:60px;
+	font-weight: bold;
+	font-size: 1.7em;
+}
+
+
+.icono {
+	font-size: 1.2em;
+	height: 40px;
+	background-color: #00ccffe0;
+	border: 1px solid  #00ccffe0;
+	padding: 10px;
+	color: white;
+	border-radius: 20px;
+}
+
+.login form label {
+	padding: 5px;
+	display: block;
+}
+
+.error {
+	background-color: #ffe6e6 !important;
+	border: 1px solid red !important;
+}
+
+.error_msg {
+	color: red;
+	padding: 5px;
+}
