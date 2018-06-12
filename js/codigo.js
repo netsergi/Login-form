@@ -5,8 +5,8 @@ app.controller('validarForm', function ($scope, $http) {
 	$scope.enviar = function () {
 		 $http.post('login.php',{"usuario": $scope.datosForm.usuario,"password": $scope.datosForm.password})
         	.success(function(data) {
-          		$scope.error = JSON.parse(data);
-          		console.log($scope.error.msg);
+          		$scope.error = data;
+          		console.log($scope.error);
         	});        
 	};
 });
@@ -21,6 +21,4 @@ $(document).ready(function(){
 		$(".login").show();
 	}
 	centrar_Login();
-
-
 });

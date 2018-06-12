@@ -18,15 +18,13 @@
 			<label for="usuario">USUARIO</label>
 			<i class="fas fa-user icono"></i>
 			<input type="text" name="usuario" ng-model="datosForm.usuario" ng-class="{ error: loginForm.usuario.$error.required && !loginForm.usuario.$pristine }" required />	
-			<span class="error_msg" ng-show="loginForm.usuario.$error.required && !loginForm.usuario.$pristine">El campo usuario no puede quedar vacio.</span>
 			<label for="password">PASSWORD</label>
 			<i class="fas fa-unlock-alt icono"></i>
 			<input type="password" name="password" ng-model="datosForm.password" ng-class="{ error: loginForm.password.$error.required && !loginForm.password.$pristine }" required />
-			<span class="error_msg" ng-show="loginForm.password.$error.required && !loginForm.password.$pristine">El campo password no puede quedar vacio.</span>
 			<hr>
-			<input  type="button" class="btn btn-success" value="Iniciar sesión" ng-disabled="!loginForm.$valid" ng-click="enviar()"> 
+			<input id="btnenviar" type="button" class="btn btn-success" value="Iniciar sesión" ng-disabled="!loginForm.$valid" ng-click="enviar()"> 
 			<br>
-			<p>{{ error.error }}</p>
+			<p class="error_msg">{{ error }}</p>
 		</form>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

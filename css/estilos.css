@@ -30,6 +30,12 @@ div.login > div:first-child >  i {
 	padding: 3px;
 }
 
+form > p {
+
+	font-size: 1.6em;
+	text-shadow: 1px 1px 1px gray;
+}
+
 .login-header {
 	height: 70px;
 	padding: 5px;

@@ -8,7 +8,7 @@
 	$query->execute();
 	$resultado = $query->fetch();
 	if ($resultado == null) {
-		$error = json_encode('{"error":"usuario","msg":"usuario no registrado"}');
+		$error = "usuario no registrado";
 		echo $error;
 	}
 	else if ($resultado['password'] != $array['password']) {
