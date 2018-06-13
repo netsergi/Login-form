@@ -102,6 +102,15 @@ form > p {
 }
 
 .error_msg {
-	color: red;
+	color: white;
+	margin: 0 auto;
 	padding: 5px;
+	font-size: 1.5em;
+	padding: 5px;
+	background-color: red;
+	border-radius: 20px;
+	width: 300px;
 }
+
+p.error_msg { 
+	display: none;  }

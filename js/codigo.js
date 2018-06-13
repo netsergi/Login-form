@@ -33,13 +33,20 @@ $(document).ready(function(){
 	}
 	centrar_Login();
 
-	var campo = $("input");
+	var campo = $("[data-tipo='campo']");
 	campo.focus(function(){
 		if (campo.hasClass("error"))
 		{
 			$(this).removeClass("error");
-			$(this).val("");			
+			$(this).val("");
+			$("p.error_msg").hide();
+			$(".login").css("height","340px");			
 		}
+	});
+
+	$("#btnenviar").click(function(){
+		$("p.error_msg").show();
+		$(".login").css("height","380px");
 	});
 	
 
