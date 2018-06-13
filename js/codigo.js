@@ -6,8 +6,19 @@ app.controller('validarForm', function ($scope, $http) {
 		 $http.post('login.php',{"usuario": $scope.datosForm.usuario,"password": $scope.datosForm.password})
         	.success(function(data) {
           		$scope.error = data;
-          		console.log($scope.error);
-        	});        
+          		var input = document.getElementsByTagName("input");
+          		switch ($scope.error.campo)
+          		{
+          			case "usuario":
+          				input[0].classList.add("error");
+          			break;
+
+          			case "password":
+          				input[1].classList.add("error");
+          			break;
+          		}
+                  		
+         });        
 	};
 });
 
@@ -21,4 +32,15 @@ $(document).ready(function(){
 		$(".login").show();
 	}
 	centrar_Login();
+
+	var campo = $("input");
+	campo.focus(function(){
+		if (campo.hasClass("error"))
+		{
+			$(this).removeClass("error");
+			$(this).val("");			
+		}
+	});
+	
+
 });

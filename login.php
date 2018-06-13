@@ -8,11 +8,12 @@
 	$query->execute();
 	$resultado = $query->fetch();
 	if ($resultado == null) {
-		$error = "usuario no registrado";
+		$error = json_encode(array("campo" =>"usuario" , "msg" =>"usuario no registrado"));
 		echo $error;
 	}
 	else if ($resultado['password'] != $array['password']) {
-		echo "password incorrecto";
+		$error = json_encode(array("campo" =>"password" , "msg" =>"Password incorrecto"));
+		echo $error;
 	}
 	$conex = null;
 ?>
