@@ -7,6 +7,11 @@ app.controller('validarForm', function ($scope, $http) {
         	.success(function(data) {
           		$scope.error = data;
           		var input = document.getElementsByTagName("input");
+          		var error = document.getElementsByClassName("error_msg");
+          		if ($scope.error == "")
+          		{
+          			window.location.href = "index.php";
+          		}
           		switch ($scope.error.campo)
           		{
           			case "usuario":
@@ -45,8 +50,7 @@ $(document).ready(function(){
 	});
 
 	$("#btnenviar").click(function(){
-		$("p.error_msg").show();
-		$(".login").css("height","380px");
+		
 	});
 	
 

@@ -98,7 +98,18 @@ form > p {
 
 .error {
 	background-color: #ffe6e6 !important;
-	border: 1px solid red !important;
+	border: 2px solid red !important;
+	animation: mover 0.3s;
+}
+
+@keyframes mover {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+
 }
 
 .error_msg {
