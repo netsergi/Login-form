@@ -17,15 +17,16 @@
 		<form name="loginForm" action="">
 			<label for="usuario">USUARIO</label>
 			<i class="fas fa-user icono"></i>
-			<input type="text" data-tipo="campo" name="usuario" ng-model="datosForm.usuario" ng-class="{ error: loginForm.usuario.$error.required && !loginForm.usuario.$pristine }" required />	
+			<input type="text" data-tipo="campo" name="usuario" ng-model="datosForm.usuario" ng-class="{ error: loginForm.usuario.$error.required && !loginForm.usuario.$pristine }" required /> 
 			<label for="password">PASSWORD</label>
 			<i class="fas fa-unlock-alt icono"></i>
 			<input type="password" name="password" data-tipo="campo" ng-model="datosForm.password" ng-class="{ error: loginForm.password.$error.required && !loginForm.password.$pristine }" required />
 			<hr>
 			<input id="btnenviar" type="button" class="btn btn-success" value="Iniciar sesión" ng-disabled="!loginForm.$valid" ng-click="enviar()"> 
 			<br>
+			 <span class="error_text">{{ error.msg }}</span>
 		</form>
-		<p class="error_msg"><i class="fas fa-exclamation-circle"></i> {{ error.msg }}</p>
+		
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script	src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
