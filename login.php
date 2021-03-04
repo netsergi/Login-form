@@ -12,7 +12,7 @@
 		echo $error;
 	}
 	else if ($resultado['password'] != $md5) {
-		$error = json_encode(array("campo" =>"password" , "msg" =>$md5));
+		$error = json_encode(array("campo" =>"password" , "msg" =>"contraseña incorrecta"));
 		echo $error;
 	}
 	else {
