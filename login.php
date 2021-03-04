@@ -5,13 +5,14 @@
 	$query = $conex -> prepare("select usuario,password from usuarios where usuario = :usuario;");
 	$query->bindParam(':usuario', $array['usuario'], PDO::PARAM_STR);
 	$query->execute();
+	$md5 = md5($array['password']);
 	$resultado = $query->fetch();
 	if ($resultado == null) {
 		$error = json_encode(array("campo" =>"usuario" , "msg" =>"usuario no registrado"));
 		echo $error;
 	}
-	else if ($resultado['password'] != $array['password']) {
-		$error = json_encode(array("campo" =>"password" , "msg" =>"Password incorrecto"));
+	else if ($resultado['password'] != $md5) {
+		$error = json_encode(array("campo" =>"password" , "msg" =>$md5));
 		echo $error;
 	}
 	else {
